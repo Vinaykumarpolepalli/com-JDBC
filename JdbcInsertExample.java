@@ -2,7 +2,7 @@ package com.JDBC;
 
 import java.sql.DriverManager;
 import java.sql.Statement;
-import java.sql.Connection; // you forgot to import this too
+import java.sql.Connection;
 
 public class JdbcInsertExample {
 
@@ -10,9 +10,9 @@ public class JdbcInsertExample {
 
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/batch55", "root", "Josh@1511");
-			Statement st1 = c.createStatement();
-			int i = st1.executeUpdate("insert into students values(4,'Raju',87)");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/batch55", "root", "Josh@1511");
+			Statement st1 = con.createStatement();
+			int i = st1.executeUpdate("insert into students values(5,'ramesh',43)");
 			if (i > 0) {
 				System.out.println(i + " rows affected");
 			} else {
